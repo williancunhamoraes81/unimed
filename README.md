@@ -20,5 +20,5 @@
 11. Faça filtros de clientes nas buscas agora para os campos cidade e estado
 12. Envie a url do seu repositório no github para análise.
 
-Obs.: Será um diferencial implementações como: tratamento de exceções (RestControllerAdvice), testes, validações, frontend, autenticação e documentação. 
+Obs.: Será um diferencial implementações como: tratamento de exceções (RestControllerAdvice), testes, validações, uso de mecanismos modernos da linguagem, frontend, autenticação e documentação. 
 
