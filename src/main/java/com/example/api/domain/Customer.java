@@ -20,6 +20,10 @@ public class Customer {
 	@Email
 	private String email;
 
+	@Column(nullable = false)
+	@NotEmpty
+	private String gender;
+
 	public Long getId() {
 		return id;
 	}
@@ -42,6 +46,14 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }
