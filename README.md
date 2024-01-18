@@ -2,8 +2,9 @@
 
 ### Requisitos
 
-1. JDK 11
-1. Maven 3
+- 🌴 GitHub
+- ☕ Java 8
+- 📦 Maven
 
 ### Comandos Prova Prática
 
@@ -22,3 +23,78 @@
 
 Obs.: Será um diferencial implementações como: tratamento de exceções (RestControllerAdvice), testes, validações, uso de mecanismos modernos da linguagem, frontend, autenticação e documentação. 
 
+# TESTE PRÁTICO FULLSTACK / JavaScript
+
+Aplicação consiste no desenvolvimento de um CRUD simples e desenvolvimento de um frontEnd todo em HTML/JavaScript para cadastro e visualização de usuários e suas hierarquias.
+
+## Tabela
+* Customer
+* Address
+
+<br/><br/>
+#### 📋 Clonando repositório
+
+```
+https://github.com/williancunhamoraes81/unimed.git
+```
+<br/><br/>
+
+#### 🚢 Utilizando API
+
+<b>LISTAR TODOS CLIENTES</b>
+curl --location 'http://localhost:8080/customers'
+<br/>
+<br/>
+
+<b>ALTERAR UM CLIENTE</b>
+curl --location --request PUT 'http://localhost:8080/customers/2' \
+--header 'Content-Type: application/json' \
+--data-raw ' {  
+    "name": "Thorr",
+    "email": "thorr@vingadores.com",
+    "gender": "M"
+}'
+<br/>
+<br/>
+
+<b>CRIANDO UM NOVO ENDEREÇO</b>
+curl --location 'http://localhost:8080/address' \
+--header 'Content-Type: application/json' \
+--data ' {        
+    "city": "Guarulhos",
+    "street": "Rua Martins Fontes",
+    "zipCode": "07194120",
+    "customer": {
+        "id": 2
+    }
+}'
+<br/>
+<br/>
+
+<b>VERIFICA UM CEP</b>
+curl --location 'viacep.com.br/ws/13382532/json/' \
+--data ''
+<br/>
+<br/>
+
+<b>CRIA UM ENDEREÇO BASEADO EM UM CEP</b>
+curl --location 'http://localhost:8080/address/cep' \
+--header 'Content-Type: application/json' \
+--data ' {        
+    "cep": "01312-000",
+    "customer": 3
+}'
+<br/>
+<br/>
+
+<b>PESQUISA CLIENTE ATRA´VES DO NOME DA CIDADE</b>
+curl --location 'http://localhost:8080/customers/search?city=S%C3%A3o%20Paulo'
+<br/>
+<br/>
+
+<b>PESQUISA CLIENTE POR NOME / EMAIL / GENERO</b>
+curl --location 'http://localhost:8080/customers/search?name=gamora'
+curl --location 'http://localhost:8080/customers/search?email=aranha@vingadores.com'
+curl --location 'http://localhost:8080/customers/search?gender=F'
+<br/>
+<br/>
