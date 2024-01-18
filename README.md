@@ -101,7 +101,9 @@ curl --location 'http://localhost:8080/customers/search?city=S%C3%A3o%20Paulo'
 <b>PESQUISA CLIENTE POR NOME / EMAIL / GENERO</b>
 <br>
 curl --location 'http://localhost:8080/customers/search?name=gamora'
+<br><br>
 curl --location 'http://localhost:8080/customers/search?email=aranha@vingadores.com'
+<br><br>
 curl --location 'http://localhost:8080/customers/search?gender=F'
 <br/>
 <br/>
