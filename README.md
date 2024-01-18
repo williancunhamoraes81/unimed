@@ -42,11 +42,13 @@ https://github.com/williancunhamoraes81/unimed.git
 #### 🚢 Utilizando API
 
 <b>LISTAR TODOS CLIENTES</b>
+<br>
 curl --location 'http://localhost:8080/customers'
 <br/>
 <br/>
 
 <b>ALTERAR UM CLIENTE</b>
+<br>
 curl --location --request PUT 'http://localhost:8080/customers/2' \
 --header 'Content-Type: application/json' \
 --data-raw ' {  
@@ -58,6 +60,7 @@ curl --location --request PUT 'http://localhost:8080/customers/2' \
 <br/>
 
 <b>CRIANDO UM NOVO ENDEREÇO</b>
+<br>
 curl --location 'http://localhost:8080/address' \
 --header 'Content-Type: application/json' \
 --data ' {        
@@ -72,12 +75,14 @@ curl --location 'http://localhost:8080/address' \
 <br/>
 
 <b>VERIFICA UM CEP</b>
+<br>
 curl --location 'viacep.com.br/ws/13382532/json/' \
 --data ''
 <br/>
 <br/>
 
 <b>CRIA UM ENDEREÇO BASEADO EM UM CEP</b>
+<br>
 curl --location 'http://localhost:8080/address/cep' \
 --header 'Content-Type: application/json' \
 --data ' {        
@@ -88,11 +93,13 @@ curl --location 'http://localhost:8080/address/cep' \
 <br/>
 
 <b>PESQUISA CLIENTE ATRA´VES DO NOME DA CIDADE</b>
+<br>
 curl --location 'http://localhost:8080/customers/search?city=S%C3%A3o%20Paulo'
 <br/>
 <br/>
 
 <b>PESQUISA CLIENTE POR NOME / EMAIL / GENERO</b>
+<br>
 curl --location 'http://localhost:8080/customers/search?name=gamora'
 curl --location 'http://localhost:8080/customers/search?email=aranha@vingadores.com'
 curl --location 'http://localhost:8080/customers/search?gender=F'
