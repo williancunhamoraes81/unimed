@@ -11,7 +11,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 	Page<Customer> findAllByOrderByNameAsc(Pageable pageable);
 
-	@Query("SELECT c FROM Customer c " +
+	@Query("SELECT DISTINCT c FROM Customer c " +
 			" LEFT JOIN Address a on a.customer = c.id " +
 			" WHERE "
 			+ "(:name IS NULL OR UPPER(c.name) LIKE UPPER(concat('%', :name, '%'))) AND "

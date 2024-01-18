@@ -76,6 +76,10 @@ public class AddressService {
 		}
 	}
 
+	public ResponseEntity<Object> getCep(String cep) throws Exception {
+		return new ResponseEntity<>(consultarCEP(cep), HttpStatus.OK);
+	}
+
 	private CepDTO consultarCEP(String cep) throws Exception {
 		HttpClient client = HttpClient.newHttpClient();
 		HttpRequest request = HttpRequest.newBuilder()

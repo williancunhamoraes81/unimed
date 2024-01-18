@@ -1,0 +1,64 @@
+<html>
+<title>Teste Unimed</title>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+$(document).ready(function() {
+
+	$.ajax({
+		url: 'http://localhost:8080/customers',
+		type: 'GET',
+		dataType: 'json',
+		success: function(data) {
+			var tableCustomers = $('#customers');
+
+			$.each(data.content, function(index, customer) {
+				tableCustomers.append('<tr><td>' + customer.name + '</td><td>' + customer.email + '</td><td>' + customer.gender + '</td></tr>');
+			});
+		},
+		error: function(error) {
+
+			console.error(error);
+		}
+	});
+
+});
+
+
+
+</script>
+</head>
+
+<body>
+
+<div class="form-container">
+    <form id="myForm">
+        <div class="form-field">
+            <label for="name">Nome:</label>
+            <input type="text" id="nome" name="nome"><br><br>
+        </div>
+        <div class="form-field">
+            <label for="email">Senha:</label>
+            <input type="password" id="senha" name="senha"><br><br>
+        </div>
+        <div class="form-field">
+            <label for="message">Superior:</label>
+            <select id="superior" name="superior">
+                <option value="0">:::::::::::::::::::::::::::SELECIONE:::::::::::::::::::::::::::</option>
+            </select>
+        </div>
+        <button class="submit-button" type="submit">Enviar</button>
+        <div id="erros" style="display: none">Campos "nome" e "senha" de preenchimento obrigatório.</div>
+    </form>
+</div>
+
+<table class="tree" id="customers">
+<tr><td>Name</td><td>E-mail</td><td>Gender</td></tr>
+
+</table>
+</body>
+
+</html>

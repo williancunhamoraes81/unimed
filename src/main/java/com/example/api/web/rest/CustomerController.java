@@ -6,6 +6,7 @@ import com.example.api.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,13 +39,13 @@ public class CustomerController {
 
 	@GetMapping
 	public Page<Customer> findAll(@RequestParam(defaultValue = "0") int page,
-								  @RequestParam(defaultValue = "5") int size) {
+								  @RequestParam(defaultValue = "20") int size) {
 		return service.findAll(PageRequest.of(page, size));
 	}
 
 	@GetMapping("/search")
 	public Page<Customer> findByFilters(@RequestParam(defaultValue = "0") int page,
-										@RequestParam(defaultValue = "5") int size,
+										@RequestParam(defaultValue = "20") int size,
 			@RequestParam(name = "name", required = false) String name,
 			@RequestParam(name = "email", required = false) String email,
 			@RequestParam(name = "gender", required = false) String gender,
