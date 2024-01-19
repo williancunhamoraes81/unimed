@@ -25,7 +25,11 @@ Obs.: Será um diferencial implementações como: tratamento de exceções (Rest
 
 # TESTE PRÁTICO FULLSTACK / JavaScript
 
-Aplicação consiste no desenvolvimento de um CRUD simples e desenvolvimento de um frontEnd todo em HTML/JavaScript para cadastro e visualização de usuários e suas hierarquias.
+Aplicação consiste no desenvolvimento de um CRUD simples e desenvolvimento de um frontEnd todo em HTML/JavaScript para cadastro e visualização de clientes e seus endereços
+
+# FrontEnd
+
+Acessar com browser o arquivo index.html localizado em resources/html
 
 ## Tabela
 * Customer
